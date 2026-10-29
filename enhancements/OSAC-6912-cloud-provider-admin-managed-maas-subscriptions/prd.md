@@ -13,8 +13,8 @@ OSAC currently has no provider-managed workflow for Cloud Provider Admins to
 define MaaS subscriptions for tenant organizations. As a result, they cannot
 use OSAC to connect eligible groups in a Tenant to existing MaaS models with
 per-model token rate limits, measured in tokens per hour and reset hourly. This leaves
-providers without a consistent way to grant and promptly revoke model access
-through OSAC. [Jira: OSAC-6912]
+providers without a consistent way to grant model access and revoke it through
+OSAC within five minutes. [Jira: OSAC-6912] [User]
 
 ## In Scope
 
@@ -36,7 +36,7 @@ through OSAC. [Jira: OSAC-6912]
   affected model and provide an actionable reason. [Clarify: R1.Q5]
   [Clarify: R2.Q4] [Clarify: R3.Q4]
 - Changes that remove a group or model, and Subscription deletion, revoke the
-  affected access within one minute. [Clarify: R2.Q5] [Clarify: R6.Q2]
+  affected access within five minutes. [User]
 
 ## Out of Scope
 
@@ -65,8 +65,8 @@ Not affected by this feature.
   and what needs attention. [Clarify: R1.Q5] [Clarify: R2.Q4]
   [Clarify: R3.Q4]
 - As a Cloud Provider Admin, I want changes and deletions to revoke affected
-  access within one minute, so removed groups or models do not retain stale
-  access. [Clarify: R2.Q5] [Clarify: R6.Q2]
+  access within five minutes, so removed groups or models do not retain stale
+  access. [User]
 
 ### Tenant Admin
 
@@ -92,14 +92,14 @@ Subscription objects.
   [Clarify: R5.Q2, R6.Q3, R7.Q1]
 - **MaaS access enforcement:** The MaaS access path must enforce per-model token
   rate limits that reset hourly and group entitlements, report status, and
-  revoke access within the stated timeframe. [Jira: OSAC-6912]
-  [Clarify: R2.Q5] [Clarify: R6.Q2] [Clarify: R8.Q1] [User]
+  revoke access within five minutes. [Jira: OSAC-6912] [Clarify: R8.Q1]
+  [User]
 
 ---
 
 ## Provenance
 
 Authored: respond @ prd 0.11.5 - 7b2b8de, workspace main @ 2753cc412
-Phases: draft, respond
+Phases: draft, respond, respond
 
-<!-- ai-workflow-provenance:{"schema_version":1,"provenance_kind":"session","workflow":"prd","workflow_version":"0.11.5","ai_workflows":"7b2b8de","source_repo":"2753cc412","source_repo_branch":"main","commits_behind_main":0,"commits_ahead_main":579,"main_ref":"main","phases":["draft","respond"],"authoring_modes":["skill"],"context_changed":false,"origin_untracked":false} -->
+<!-- ai-workflow-provenance:{"schema_version":1,"provenance_kind":"session","workflow":"prd","workflow_version":"0.11.5","ai_workflows":"7b2b8de","source_repo":"2753cc412","source_repo_branch":"main","commits_behind_main":0,"commits_ahead_main":579,"main_ref":"main","phases":["draft","respond","respond"],"authoring_modes":["skill"],"context_changed":false,"origin_untracked":false} -->
