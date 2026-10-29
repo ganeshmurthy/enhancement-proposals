@@ -2,7 +2,7 @@
 
 ## Status
 
-- Rounds completed: 8
+- Rounds completed: 9
 - Open gaps: 0
 - Exit criteria met: Yes
 
@@ -504,6 +504,35 @@ timestamps are sufficient.
 
 Standard resource metadata is sufficient for the initial scope; no separate
 change-history capability is required.
+
+---
+
+## Round 9 — Group and individual-user subjects
+
+### R9.Q1: Supporting RHOAI subscription subjects
+
+A reviewer noted that the MaaS subscription contract supports both group-based
+and user-based subjects. Should OSAC allow direct Tenant-user assignment as an
+exception to the standard group-based path, and may a Subscription include both
+groups and individual users?
+
+#### Answer
+
+Keep group-based assignment and allow direct assignment to individual Tenant
+users for exceptions. A Subscription may include both groups and users.
+
+#### Impact
+
+The PRD must cover group and direct user assignment, and OSAC must resolve both
+group membership and individually selected Tenant users.
+
+#### Decision (D23)
+
+Subscription subjects may include groups and individual users belonging to the
+associated Tenant, including both types on one Subscription. Groups are the
+standard assignment path; direct user assignment is available for exceptions.
+This supersedes D19's group-only restriction and aligns with D15's eligible
+Tenant-user and group scope.
 
 ---
 
