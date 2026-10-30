@@ -2,7 +2,7 @@
 
 ## Status
 
-- Rounds completed: 10
+- Rounds completed: 11
 - Open gaps: 0
 - Exit criteria met: Yes
 
@@ -558,6 +558,34 @@ hourly limit.
 Cloud Provider Admins may configure multiple token-rate limits for the same
 model simultaneously, with each limit applying over a specified time window.
 The detailed supported window formats and validation belong in the design.
+
+---
+
+## Round 11 — External Tenant identities
+
+### R11.Q1: Identity lookup and Tenant qualification
+
+Should OSAC require Tenant users or groups to be registered or validated in
+OSAC, and should Cloud Provider Admins provide the Tenant ID with each identity?
+
+#### Answer
+
+No. Cloud Provider Admins provide group names and user identifiers from the
+Tenant's external IdP. OSAC does not look up or validate their existence or
+membership. The Subscription's Tenant association supplies the scope, and OSAC
+applies any Tenant qualification required by MaaS.
+
+#### Impact
+
+The PRD must not imply an OSAC identity directory or picker. MaaS authorization
+must match the supplied identifiers against the Tenant's identity claims.
+
+#### Decision (D25)
+
+Tenant group names and user identifiers may be supplied without OSAC-side
+existence or membership checks. Cloud Provider Admins do not provide a Tenant ID
+with each identity; the Subscription's Tenant association scopes the
+identifiers. The detailed MaaS representation belongs in the design.
 
 ---
 
