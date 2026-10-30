@@ -2,7 +2,7 @@
 
 ## Status
 
-- Rounds completed: 9
+- Rounds completed: 10
 - Open gaps: 0
 - Exit criteria met: Yes
 
@@ -533,6 +533,31 @@ associated Tenant, including both types on one Subscription. Groups are the
 standard assignment path; direct user assignment is available for exceptions.
 This supersedes D19's group-only restriction and aligns with D15's eligible
 Tenant-user and group scope.
+
+---
+
+## Round 10 — Token rate-limit windows
+
+### R10.Q1: Multiple windows per model
+
+Should a Subscription allow only one token-rate-limit window per model, or may
+Cloud Provider Admins configure multiple windows for the same model at once?
+
+#### Answer
+
+Admins should be able to configure multiple windows for the same model at once.
+
+#### Impact
+
+The PRD should describe multiple token-rate limits per model, each applying over
+its own configured time window, rather than restricting subscriptions to an
+hourly limit.
+
+#### Decision (D24)
+
+Cloud Provider Admins may configure multiple token-rate limits for the same
+model simultaneously, with each limit applying over a specified time window.
+The detailed supported window formats and validation belong in the design.
 
 ---
 

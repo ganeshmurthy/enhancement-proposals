@@ -12,10 +12,10 @@
 OSAC currently has no provider-managed workflow for Cloud Provider Admins to
 define MaaS subscriptions for tenant organizations. As a result, they cannot
 use OSAC to connect eligible groups and, when needed, individual users in a
-Tenant to existing MaaS models with per-model token rate limits, measured in
-tokens per hour and reset hourly. This leaves providers without a consistent
-way to grant model access and revoke it through OSAC within five minutes.
-[Jira: OSAC-6912] [User]
+Tenant to existing MaaS models with per-model token rate limits over configured
+time windows. This leaves providers without a consistent way to grant model
+access and revoke it through OSAC within five minutes. [Jira: OSAC-6912] [User]
+[Clarify: R10.Q1]
 
 ## In Scope
 
@@ -28,11 +28,11 @@ way to grant model access and revoke it through OSAC within five minutes.
   users can access the selected models. Groups are the standard assignment path;
   direct user assignment is available for exceptions. [Clarify: R5.Q1]
   [Clarify: R5.Q2] [Clarify: R7.Q1] [Clarify: R8.Q1] [Clarify: R9.Q1]
-- Cloud Provider Admins can set a token rate limit for each model, measured in
-  tokens per hour and reset hourly. They can also set Subscription priority.
+- Cloud Provider Admins can set multiple token rate limits for each model, each
+  over a configured time window. They can also set Subscription priority.
   The associated Tenant is the only required attribution; separate cost-center
   and label attribution are not required. [Clarify: R3.Q1] [User]
-  [Clarify: R2.Q3] [Clarify: R7.Q2]
+  [Clarify: R2.Q3] [Clarify: R7.Q2] [Clarify: R10.Q1]
 - Cloud Provider Admins can see overall and per-model Pending, Applied, and
   Failed status. Applied means the entitlement is active; failures identify the
   affected model and provide an actionable reason. [Clarify: R1.Q5]
@@ -57,10 +57,12 @@ Not affected by this feature.
 
 - As a Cloud Provider Admin, I want to create a Subscription for an OSAC Tenant
   by selecting existing MaaS models, eligible groups, and, when needed,
-  individual Tenant users, and setting a token rate limit in tokens per hour
-  for each model, so I can provide controlled access within that Tenant.
+  individual Tenant users, and setting multiple token rate limits over
+  configured time windows for each model, so I can provide controlled access
+  within that Tenant.
   [Jira: OSAC-6912] [Clarify: R5.Q1]
   [Clarify: R5.Q2] [Clarify: R3.Q1] [User] [Clarify: R2.Q3]
+  [Clarify: R10.Q1]
   [Clarify: R7.Q1] [Clarify: R8.Q1]
 - As a Cloud Provider Admin, I want to see overall and per-model status with
   actionable failure reasons, so I can tell whether a Subscription is active
@@ -78,10 +80,11 @@ Subscription objects.
 ### Tenant User
 
 - As a Tenant User who belongs to a group selected for a Subscription or is
-  directly assigned to one, I want to access the MaaS models granted to me within
-  their hourly token rate limits, so I can use the provider's MaaS offering
-  without managing the Subscription. [Clarify: R1.Q1] [Clarify: R5.Q2]
-  [Clarify: R6.Q3] [Clarify: R7.Q1] [Clarify: R3.Q1] [Clarify: R9.Q1] [User]
+  directly assigned to one, I want to access the MaaS models granted to me
+  within the token rate limits configured for those models, so I can use the
+  provider's MaaS offering without managing the Subscription. [Clarify: R1.Q1]
+  [Clarify: R5.Q2] [Clarify: R6.Q3] [Clarify: R7.Q1] [Clarify: R3.Q1]
+  [Clarify: R9.Q1] [Clarify: R10.Q1] [User]
 
 ## Dependencies
 
@@ -93,15 +96,16 @@ Subscription objects.
   only intended subjects receive the entitlement. [Clarify: R5.Q2, R6.Q3,
   R7.Q1, R9.Q1]
 - **MaaS access enforcement:** The MaaS access path must enforce per-model token
-  rate limits that reset hourly and group or direct-user entitlements, report
-  status, and revoke access within five minutes. [Jira: OSAC-6912]
-  [Clarify: R8.Q1] [Clarify: R9.Q1] [User]
+  rate limits over their configured time windows and group or direct-user
+  entitlements, report status, and revoke access within five minutes.
+  [Jira: OSAC-6912]
+  [Clarify: R8.Q1] [Clarify: R9.Q1] [Clarify: R10.Q1] [User]
 
 ---
 
 ## Provenance
 
 Authored: respond @ prd 0.11.5 - 7b2b8de, workspace main @ 2753cc412
-Phases: draft, respond, respond, respond
+Phases: draft, respond, respond, respond, respond
 
-<!-- ai-workflow-provenance:{"schema_version":1,"provenance_kind":"session","workflow":"prd","workflow_version":"0.11.5","ai_workflows":"7b2b8de","source_repo":"2753cc412","source_repo_branch":"main","commits_behind_main":0,"commits_ahead_main":579,"main_ref":"main","phases":["draft","respond","respond","respond"],"authoring_modes":["skill"],"context_changed":false,"origin_untracked":false} -->
+<!-- ai-workflow-provenance:{"schema_version":1,"provenance_kind":"session","workflow":"prd","workflow_version":"0.11.5","ai_workflows":"7b2b8de","source_repo":"2753cc412","source_repo_branch":"main","commits_behind_main":0,"commits_ahead_main":579,"main_ref":"main","phases":["draft","respond","respond","respond","respond"],"authoring_modes":["skill"],"context_changed":false,"origin_untracked":false} -->
