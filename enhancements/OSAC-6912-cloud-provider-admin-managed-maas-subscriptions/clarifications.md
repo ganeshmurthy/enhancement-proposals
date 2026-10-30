@@ -2,9 +2,9 @@
 
 ## Status
 
-- Rounds completed: 11
-- Open gaps: 0
-- Exit criteria met: Yes
+- Rounds completed: 12
+- Open gaps: 1
+- Exit criteria met: No
 
 ## Round 1 — Access model, scope, fields, interfaces, and feedback
 
@@ -589,6 +589,26 @@ identifiers. The detailed MaaS representation belongs in the design.
 
 ---
 
+## Round 12 — MaaS inference attribution
+
+### R12.Q1: Tenant-only attribution for the default Project
+
+Can v1 MaaS inference usage be attributed to the Tenant's default OSAC Project
+using the Tenant identifier alone?
+
+#### Answer
+
+Pending confirmation from the Metering team.
+
+#### Impact
+
+The current v1 scope keeps the Tenant association as the only required
+attribution. If the Tenant identifier cannot identify the default Project, the
+v1 attribution requirements need to be revisited.
+
+---
+
 ## Remaining Gaps
 
-None. Clarification exit criteria are met for drafting the PRD.
+- Metering team to confirm whether the Tenant identifier alone can attribute
+  MaaS inference usage to the Tenant's default OSAC Project for v1.

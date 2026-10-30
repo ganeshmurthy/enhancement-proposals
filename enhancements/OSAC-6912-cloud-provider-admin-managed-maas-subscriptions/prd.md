@@ -100,6 +100,10 @@ Subscription objects.
   external group and user identity claims so supplied identifiers can match
   during authorization. OSAC does not need to query or synchronize the Tenant's
   identity directory. [Clarify: R11.Q1]
+- **MaaS inference attribution:** The Metering team must confirm that the Tenant
+  identifier alone is sufficient to attribute inference usage to that Tenant's
+  default OSAC Project for v1. If it is not, v1 attribution requirements need to
+  be revisited. [Clarify: R12.Q1]
 - **MaaS access enforcement:** The MaaS access path must enforce per-model token
   rate limits over their configured time windows and group or direct-user
   entitlements, report status, and revoke access within five minutes.
@@ -111,6 +115,6 @@ Subscription objects.
 ## Provenance
 
 Authored: respond @ prd 0.11.5 - 7b2b8de, workspace main @ 2753cc412
-Phases: draft, respond, respond, respond, respond, respond
+Phases: draft, respond, respond, respond, respond, respond, respond
 
-<!-- ai-workflow-provenance:{"schema_version":1,"provenance_kind":"session","workflow":"prd","workflow_version":"0.11.5","ai_workflows":"7b2b8de","source_repo":"2753cc412","source_repo_branch":"main","commits_behind_main":0,"commits_ahead_main":579,"main_ref":"main","phases":["draft","respond","respond","respond","respond","respond"],"authoring_modes":["skill"],"context_changed":false,"origin_untracked":false} -->
+<!-- ai-workflow-provenance:{"schema_version":1,"provenance_kind":"session","workflow":"prd","workflow_version":"0.11.5","ai_workflows":"7b2b8de","source_repo":"2753cc412","source_repo_branch":"main","commits_behind_main":0,"commits_ahead_main":579,"main_ref":"main","phases":["draft","respond","respond","respond","respond","respond","respond"],"authoring_modes":["skill"],"context_changed":false,"origin_untracked":false} -->
