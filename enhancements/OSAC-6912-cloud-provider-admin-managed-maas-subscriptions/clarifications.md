@@ -147,8 +147,8 @@ identity categories still need definition.
 
 #### Decision (D6)
 
-Only provider identities can be assigned as Subscription beneficiaries; Tenant
-Admin and Tenant User identities are not eligible.
+Only Cloud Provider identities can be assigned as Subscription beneficiaries;
+Tenant Admin and Tenant User identities are not eligible.
 
 ---
 
